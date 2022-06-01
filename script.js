@@ -1,4 +1,13 @@
-
+const gameFlowController = (() => {
+    const submit = document.querySelector(".submitButton");
+    const playerForm = document.querySelector(".player-info");
+    submit.addEventListener("click", (event)=>{
+        event.preventDefault();
+        gameBoardController.createPlayers(playerForm.player1.value, playerForm.player2.value);
+        playerForm.classList.toggle("none");
+        displayController.displayPlayer(`${currentPlayerTurn.name}\'s Turn`);
+    });
+})();
 
 const gameBoardController = (() => {
     let currentPlayerTurn;
@@ -17,18 +26,9 @@ const gameBoardController = (() => {
         }) 
     );
 
-    const submit = document.querySelector(".submitButton");
-    const playerForm = document.querySelector(".player-info");
-    submit.addEventListener("click", (event)=>{
-        event.preventDefault();
-        createPlayers();
-        playerForm.classList.toggle("none");
-        displayController.displayPlayer(`${currentPlayerTurn.name}\'s Turn`);
-    });
-
-    const createPlayers = () => {
-        let player1Name = playerForm.player1.value;
-        let player2Name = playerForm.player2.value; 
+    const createPlayers = (name1, name2) => {
+        let player1Name = name1;
+        let player2Name = name2;
         currentPlayerTurn = playerFactory(player1Name, "x");
         nextPlayerTurn = playerFactory(player2Name, "o");
     }
@@ -86,7 +86,7 @@ const gameBoardController = (() => {
             currentPlayerTurn = oldNextPlayer;
             nextPlayerTurn = oldCurrentPlayer;
     }
-    return {};
+    return {createPlayers};
 })();
 
 const displayController = (() => {
