@@ -13,22 +13,23 @@
 <body>
 
   <header class="player-header"></header>
+  <button type="button" onclick="location.reload()" class="none">Play again?</button>
 
   <form class="player-info">
-    <label for="player1">(Xs) Player One Name:</label>
+    <label for="player1">(X's) Player One Name:</label>
     <input type="text" name="player1">
 
 
-    <label for="player2">(Os) Player Two Name:</label>
+    <label for="player2">(O's) Player Two Name:</label>
     <input type="text" name="player2">
 
     <input class="submitButton" type="submit" value="Play">
   </form>
 
   <div class="gameboard">
-      <p data-row="0" data-column="0">-</p><p data-row="0" data-column="1">-</p><p data-row="0" data-column="2">-</p>
-      <p data-row="1" data-column="0">-</p><p data-row="1" data-column="1">-</p><p data-row="1" data-column="2">-</p>
-      <p data-row="2" data-column="0">-</p><p data-row="2" data-column="1">-</p><p data-row="2" data-column="2">-</p>
+      <p data-row="0" data-column="0"> </p><p data-row="0" data-column="1"> </p><p data-row="0" data-column="2"> </p>
+      <p data-row="1" data-column="0"> </p><p data-row="1" data-column="1"> </p><p data-row="1" data-column="2"> </p>
+      <p data-row="2" data-column="0"> </p><p data-row="2" data-column="1"> </p><p data-row="2" data-column="2"> </p>
   </div>
 
   <script src="script.js"></script>

@@ -16,12 +16,19 @@ input[type="text"], input[type="submit"]{
     border:none;
 }
 
-input[type="submit"]{
-    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
+button, input[type="submit"]{
+    font-family: inherit;
+    font-size: inherit;
     margin-top: 1rem;
 
     box-shadow: 0px 5px 0px #a3823f;
+}
+
+button{
+    border: none;
+    border-radius: 5px;
+    margin: auto;
+    box-shadow: 0px 5px 0px #a34b3f;
 }
 
 .player-info{
@@ -37,19 +44,24 @@ input[type="submit"]{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    gap:5p
+    gap:5p;
 
     box-shadow: 0px 0px 8px rgb(54, 31, 0);
 }
 
+.player-header{
+    font-size: 3rem;
+}
+
 .gameboard{
     display:grid;
-    width: 10em;
-    height: 10em;
+    width: 15em;
+    height: 15em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 7px;
+    row-gap: 7px;
     background-color: #61ffca;
-
 
     border-radius: 15px;
     margin: 0px auto;
@@ -58,12 +70,16 @@ input[type="submit"]{
 }
 
 .gameboard>*{
-    font-size: 3em;
+    font-size: 4em;
     text-align: center;
-    height:100%;
-    width:100%;
-    justify-self:center;
+
+
+    background-color: #13a7a7;
+    color: #61ffca;
+
     font-family: 'Bebas Neue', cursive;
+    
+    border-radius: 15px;
     margin:0;
 }
 
